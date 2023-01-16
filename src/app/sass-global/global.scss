@@ -1,0 +1,298 @@
+/* mobile-first 360x[640, 740] - acessos: 16% */
+
+$color-1: #ed4a2c;
+$color-2: #f1724b;
+$color-3: #f1f1f1;
+$color-4: #2c292a;
+
+.page-header {
+  background-color: $color-1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 39.5rem;
+
+  .top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $color-1;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 6rem;
+    padding: 0 1.2rem;
+    box-shadow: 0 0.2rem 0.4rem 0 $color-4;
+
+    nav {
+      color: $color-3;
+      font-weight: 600;
+    }
+  }
+
+  .h-logo {
+    padding-top: 6rem;
+    margin: 2rem 0;
+  }
+
+  .h-description {
+    font-weight: 600;
+    color: $color-3;
+    font-size: 2.5rem;
+    width: 30rem;
+    margin: 0 1.2rem 2.8rem 1.2rem;
+    text-align: center;
+  }
+
+  .h-app {
+    position: absolute;
+    top: 37.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    // display: none;
+
+    .h-app-title {
+      background-color: $color-3;
+      width: 20rem;
+      border-radius: 3rem;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.2rem;
+      padding: 1rem 0 0.8rem 0;
+      color: $color-1;
+      box-shadow: 0 0.2rem 0.4rem 0 $color-4;
+      margin-bottom: 2rem;
+    }
+
+    .h-app-txts {
+      display: flex;
+      flex-direction: column;
+      color: $color-2;
+      font-size: 1.8rem;
+      font-weight: 600;
+      text-align: center;
+
+      span {
+        text-shadow: -0.1rem 0.1rem 0 $color-4;
+      }
+    }
+    .h-app-playstore {
+      img {
+        width: 18.2rem;
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+
+section {
+  margin: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: $color-4;
+  text-align: center;
+
+  header {
+    font-weight: 900;
+    color: $color-1;
+    align-self: stretch;
+
+    .div-bar {
+      height: 0.3rem;
+      margin-bottom: 2rem;
+      background: rgb(255, 255, 255);
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(237, 74, 44, 1) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    }
+  }
+}
+
+.page-footer {
+  background-color: $color-2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $color-3;
+  height: 5rem;
+  font-size: 1rem;
+
+  .page-footer-line-1 {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    justify-content: space-evenly;
+    width: 25rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media print {
+}
+
+@media screen and (min-width: 280px) {
+  /* 280x653 */
+}
+
+// @media screen and (min-width: 360px) {
+//   /* mobile-first 360x[640, 740] - acessos: 16% */
+// }
+
+@media screen and (min-width: 412px) {
+  /* 412x[732, 869, 824, 846, 847, 869] */
+}
+
+@media screen and (min-width: 640px) {
+  /* 640x360 - acessos: 16% */
+  .page-header {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 23rem;
+    .top-bar {
+      position: absolute;
+      justify-content: flex-end;
+      align-self: stretch;
+      box-shadow: none;
+      background-color: unset;
+
+      img {
+        display: none;
+      }
+    }
+
+    .h-logo {
+      z-index: 1001;
+      padding: 0 1.2rem;
+    }
+
+    .h-description {
+      align-self: center;
+      text-align: right;
+      margin: 0 1.2rem;
+    }
+
+    .h-app {
+      top: 21rem;
+      width: 100%;
+
+      .h-app-title {
+        width: 23rem;
+        font-size: 1.6rem;
+      }
+
+      .h-app-txts {
+        font-size: 2.1rem;
+      }
+
+      .h-app-playstore {
+        img {
+          width: 20.2rem;
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+
+  section {
+    margin: 4rem 10rem;
+  }
+}
+
+@media screen and (min-width: 740px) {
+  /* 740x360 - acessos: 16% */
+}
+
+@media screen and (min-width: 768px) {
+  /* 768x1024 - acessos: 4% */
+}
+
+@media screen and (min-width: 1024px) {
+  /* 1024x768 - acessos: 4% */
+}
+
+@media screen and (min-width: 1280px) {
+  /* 1080x[1024, 720, 900, 800, 850] */
+}
+
+@media screen and (min-width: 1366px) {
+  /* desktop-first 1366x768 - acessos: 25% */
+
+  .page-header {
+    .top-bar {
+      nav {
+        font-size: 1.4rem;
+      }
+    }
+
+    .h-description {
+      flex-grow: 1;
+      align-self: flex-end;
+      display: flex;
+      justify-content: flex-start;
+      span {
+        font-size: 2.5rem;
+        width: 32rem;
+        text-align: left;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        color: #f1724b;
+        font-weight: 900;
+      }
+    }
+
+    .h-app {
+      top: 21rem;
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-evenly;
+      margin-top: 4rem;
+      align-items: center;
+
+      .h-app-title {
+        width: 20.2rem;
+        font-size: 1.5rem;
+        margin-bottom: 0;
+      }
+
+      .h-app-txts {
+        font-size: 2.1rem;
+      }
+
+      .h-app-playstore {
+        img {
+          width: 20.2rem;
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+
+  article {
+    flex-flow: column wrap;
+    display: flex;
+    height: 71rem;
+    margin-top: 13rem;
+    align-content: center;
+  }
+
+  section {
+    margin: 4rem 10rem;
+    width: 47.984rem;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  /* desktop 1920x1080 - acessos: 6% */
+}

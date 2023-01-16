@@ -1,0 +1,97 @@
+<header class="page-header">
+  <div class="top-bar">
+    <a [routerLink]="['/']">
+      <img src={{h_path_logo_top[0]}} alt={{h_path_logo_top[1]}}>
+    </a>
+    <nav><button (click)="goToUrl('login')">{{h_nav1}}</button></nav>
+  </div>
+
+  <div class="h-logo">
+    <a [routerLink]="['/']">
+      <img src={{h_path_logo[0]}} alt={{h_path_logo[1]}}>
+    </a>
+  </div>
+  <div class="h-description"><span>{{h_description}}</span></div>
+  <div class="h-app">
+    <div class="h-app-title"><button (click)="goToUrl('playstore')">{{h_app_title}}</button></div>
+    <div class="h-app-txts">
+      <span *ngFor="let h_app_txt of h_app_txts; let i = index">{{h_app_txt}}</span>
+    </div>
+    <div class="h-app-playstore">
+      <button (click)="goToUrl('playstore')">
+        <img src={{h_app_path_playstore[0]}} alt={{h_app_path_playstore[1]}}>
+      </button>
+    </div>
+  </div>
+</header>
+<main>
+  <article>
+    <section class="s-tmpl">
+      <header class="s-tmpl-title">
+        <div class="div-bar"></div>
+        <div>{{s_tmpl_title}}</div>
+      </header>
+      <div class="s-tmpl-sub-title">{{s_tmpl_sub_title}}</div>
+      <div class="s-tmpl-tmpls">
+        <ul>
+          <li *ngFor="let s_tmpl_tmpl of s_tmpl_tmpls; let i = index">{{s_tmpl_tmpl}}</li>
+        </ul>
+      </div>
+      <div class="s-tmpl-txt">{{s_tmpl_txt}}</div>
+      <div class="s-tmpl-img1"><img src={{s_tmpl_path_img1[0]}} alt={{s_tmpl_path_img1[0]}}></div>
+      <div class="s-tmpl-carousel"><img src={{s_tmpl_carousel}} alt=""></div>
+    </section>
+    <section class="s-hands">
+      <header>
+        <div class="div-bar"></div>
+        <div>{{s_hands_title}}</div>
+      </header>
+      <div class="s-hands-txt">{{s_hands_txt}}</div>
+      <div class="s-hands-img1"><img src={{s_hands_path_img1[0]}} alt={{s_hands_path_img1[1]}}></div>
+    </section>
+    <section class="s-ctrl">
+      <header>
+        <div class="div-bar"></div>
+        <div>{{s_ctrl_title}}</div>
+      </header>
+      <div class="s-ctrl-img1"><img src={{s_ctrl_path_img1[0]}} alt={{s_ctrl_path_img1[1]}}></div>
+      <div class="s-ctrl-txts">
+        <div *ngFor="let s_ctrl_txt of s_ctrl_txts; let i = index">{{s_ctrl_txt}}</div>
+      </div>
+      <div class="s-ctrl-caroucel"><img src={{s_ctrl_carousel}} alt=""></div>
+    </section>
+    <section class="s-invest">
+      <header>
+        <div class="div-bar"></div>
+        <div>{{s_invest_title}}</div>
+      </header>
+      <div class="s-invest-txt">{{s_invest_txt}}</div>
+      <div class="s-invest-img1"><img src={{s_invest_path_img1[0]}} alt={{s_invest_path_img1[1]}}></div>
+    </section>
+    <section class="s-contact">
+      <header>
+        <div class="div-bar"></div>
+        <div>{{s_contact_title}}</div>
+      </header>
+      <div class="s-contact-address">
+        <address class="s-contact-address-whatsapp">
+          <a href={{s_contact_whatsapp[2]}}><img src={{s_contact_whatsapp[0]}} alt={{s_contact_whatsapp[1]}}></a>
+        </address>
+        <address class="s-contact-address-telegram">
+          <a href={{s_contact_telegram[2]}}><img src={{s_contact_telegram[0]}} alt={{s_contact_telegram[1]}}></a>
+        </address>
+      </div>
+    </section>
+    <footer></footer>
+  </article>
+</main>
+<footer class="page-footer">
+  <div class="page-footer-line-1">
+    <div>{{page_footer_txts[0]}}</div>
+    <div> | </div>
+    <div>
+      <address><a href={{page_footer_txts[2]}}>{{contact_support}}</a></address>
+    </div>
+  </div>
+  <div class="page-footer-line-2"><a [routerLink]="['/']">{{page_footer_txts[1]}}</a></div>
+</footer>
