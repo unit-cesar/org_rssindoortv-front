@@ -10,7 +10,6 @@ $color-4: #2c292a;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 39.5rem;
 
   .top-bar {
     position: fixed;
@@ -35,6 +34,10 @@ $color-4: #2c292a;
   .h-logo {
     padding-top: 6rem;
     margin: 2rem 0;
+    img {
+      // para o zoom funcionar no iOS as medidas de imagens devem ser em PX
+      width: 220px;
+    }
   }
 
   .h-description {
@@ -44,48 +47,6 @@ $color-4: #2c292a;
     width: 30rem;
     margin: 0 1.2rem 2.8rem 1.2rem;
     text-align: center;
-  }
-
-  .h-app {
-    position: absolute;
-    top: 37.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    // display: none;
-
-    .h-app-title {
-      background-color: $color-3;
-      width: 20rem;
-      border-radius: 3rem;
-      text-align: center;
-      font-weight: 600;
-      font-size: 1.2rem;
-      padding: 1rem 0 0.8rem 0;
-      color: $color-1;
-      box-shadow: 0 0.2rem 0.4rem 0 $color-4;
-      margin-bottom: 2rem;
-    }
-
-    .h-app-txts {
-      display: flex;
-      flex-direction: column;
-      color: $color-2;
-      font-size: 1.8rem;
-      font-weight: 600;
-      text-align: center;
-
-      span {
-        text-shadow: -0.1rem 0.1rem 0 $color-4;
-      }
-    }
-    .h-app-playstore {
-      img {
-        width: 18.2rem;
-        margin-top: 1rem;
-      }
-    }
   }
 }
 
@@ -127,27 +88,41 @@ section {
   color: $color-3;
   height: 5rem;
   font-size: 1rem;
+  padding: 0.6rem 0;
 
   .page-footer-line-1 {
     display: flex;
     flex-direction: row;
     align-self: center;
     justify-content: space-evenly;
-    width: 25rem;
+    white-space: pre;
     margin-bottom: 0.5rem;
   }
 }
+
+/* BREAKPINTS */
 
 @media print {
 }
 
 @media screen and (min-width: 280px) {
   /* 280x653 */
+
+  .page-header,
+  .article-main,
+  .page-footer {
+    zoom: 0.8;
+  }
 }
 
-// @media screen and (min-width: 360px) {
-//   /* mobile-first 360x[640, 740] - acessos: 16% */
-// }
+@media screen and (min-width: 360px) {
+  /* mobile-first 360x[640, 740] - acessos: 16% */
+  .page-header,
+  .article-main,
+  .page-footer {
+    zoom: unset;
+  }
+}
 
 @media screen and (min-width: 412px) {
   /* 412x[732, 869, 824, 846, 847, 869] */
@@ -159,7 +134,7 @@ section {
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    height: 23rem;
+
     .top-bar {
       position: absolute;
       justify-content: flex-end;
@@ -178,44 +153,36 @@ section {
     }
 
     .h-description {
-      align-self: center;
-      text-align: right;
-      margin: 0 1.2rem;
-    }
-
-    .h-app {
-      top: 21rem;
-      width: 100%;
-
-      .h-app-title {
-        width: 23rem;
-        font-size: 1.6rem;
-      }
-
-      .h-app-txts {
-        font-size: 2.1rem;
-      }
-
-      .h-app-playstore {
-        img {
-          width: 20.2rem;
-          margin-top: 1rem;
-        }
+      flex-grow: 1;
+      align-self: flex-end;
+      display: flex;
+      justify-content: flex-end;
+      span {
+        font-size: 2.5rem;
+        width: 32rem;
+        text-align: right;
+        text-transform: uppercase;
+        color: #f1724b;
+        font-weight: 900;
       }
     }
-  }
-
-  section {
-    margin: 4rem 10rem;
   }
 }
 
 @media screen and (min-width: 740px) {
   /* 740x360 - acessos: 16% */
+  .article-main,
+  .page-footer {
+    zoom: 1.2;
+  }
 }
 
 @media screen and (min-width: 768px) {
   /* 768x1024 - acessos: 4% */
+  .article-main,
+  .page-footer {
+    zoom: 1.3;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -223,11 +190,20 @@ section {
 }
 
 @media screen and (min-width: 1280px) {
-  /* 1080x[1024, 720, 900, 800, 850] */
+  /* 1280x[1024, 720, 900, 800, 850] */
+  .article-main,
+  .page-footer {
+    zoom: 2;
+  }
 }
 
 @media screen and (min-width: 1366px) {
   /* desktop-first 1366x768 - acessos: 25% */
+
+  .article-main,
+  .page-footer {
+    zoom: unset;
+  }
 
   .page-header {
     .top-bar {
@@ -251,48 +227,38 @@ section {
         font-weight: 900;
       }
     }
-
-    .h-app {
-      top: 21rem;
-      width: 100%;
-      flex-direction: row;
-      justify-content: space-evenly;
-      margin-top: 4rem;
-      align-items: center;
-
-      .h-app-title {
-        width: 20.2rem;
-        font-size: 1.5rem;
-        margin-bottom: 0;
-      }
-
-      .h-app-txts {
-        font-size: 2.1rem;
-      }
-
-      .h-app-playstore {
-        img {
-          width: 20.2rem;
-          margin-top: 1rem;
-        }
-      }
-    }
   }
 
-  article {
+  .s {
     flex-flow: column wrap;
     display: flex;
-    height: 71rem;
-    margin-top: 13rem;
+    height: 69rem;
     align-content: center;
+    margin-top: 2rem;
   }
 
   section {
-    margin: 4rem 10rem;
+    margin: 2rem 10rem;
     width: 47.984rem;
   }
 }
 
 @media screen and (min-width: 1920px) {
   /* desktop 1920x1080 - acessos: 6% */
+
+  // .page-header,
+  .article-main,
+  .page-footer {
+    zoom: 1.4;
+  }
+}
+
+@media screen and (min-width: 3840px) {
+  /* desktop 1920x1080 - acessos: 6% */
+
+  .page-header,
+  .article-main,
+  .page-footer {
+    zoom: 3;
+  }
 }

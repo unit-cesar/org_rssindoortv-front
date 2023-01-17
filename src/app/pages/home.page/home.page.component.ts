@@ -23,21 +23,21 @@ export class HomePageComponent {
   s_tmpl_sub_title = 'Entretendo o público presente no estabelecimento, divulgue:';
   s_tmpl_tmpls = ['Produtos', 'Serviços', 'Promoções', 'Curiosidades', 'Informativos', 'Posts Recentes do Instagram', 'Vídeos do YouTube', 'Diversas Fontes de Notícias', 'Clima da sua Cidade', 'Cotações Financeiras', 'Resultados de Loterias', 'Memes Engraçados', 'Trailers de Filmes', 'Notícias de Times de Futebol'];
   s_tmpl_txt = '...e muito mais, confira!';
-  s_tmpl_carousel = '../../../assets/img/loteria.jpg';
-  s_tmpl_path_img1 = ['../../../assets/img/monitor1.jpg', 'tv com suporte de parede'];
+  s_tmpl_carousel = '../../../assets/img/loteria.png';
+  s_tmpl_path_img1 = ['../../../assets/img/monitor1.png', 'tv com suporte de parede'];
 
   s_hands_title = 'FORTALEÇA OS LAÇOS';
-  s_hands_txt = 'Divulgue mídias sociais dos seus clientes e parceiros em sua TV.';
-  s_hands_path_img1 = ['../../../assets/img/hands.jpg', 'aperto de mãos'];
+  s_hands_txt = 'Divulgue mídias sociais dos seus\nclientes e parceiros em sua TV.';
+  s_hands_path_img1 = ['../../../assets/img/hands.png', 'aperto de mãos'];
 
   s_ctrl_title = 'TENHA CONTROLE TOTAL';
-  s_ctrl_txts = ['Praticidade, gerencie tudo ou conte com nosso suporte.', 'Player com opção de fundo musical personalizado.', 'Conteúdo dinâmico e auto-atualizado.', 'Escolha entre diversas opções de fontes de notícias.'];
-  s_ctrl_path_img1 = ['../../../assets/img/ctrl.jpg', 'pessoa manipulando engrenagens'];
-  s_ctrl_carousel = '../../../assets/img/bbc.jpg';
+  s_ctrl_txts = ['Praticidade, gerencie tudo ou conte\ncom nosso suporte.', 'Player com opção de fundo\nmusical personalizado.', 'Conteúdo dinâmico e\nauto-atualizado.', 'Escolha entre diversas opções de\nfontes de notícias.'];
+  s_ctrl_path_img1 = ['../../../assets/img/ctrl.png', 'pessoa manipulando engrenagens'];
+  s_ctrl_carousel = '../../../assets/img/bbc.png';
 
   s_invest_title = 'INVESTIMENTO';
   s_invest_txt = 'R$ 120,00 mensais por Player';
-  s_invest_path_img1 = ['../../../assets/img/monitor2.jpg', 'tvs com caixa de suporte'];
+  s_invest_path_img1 = ['../../../assets/img/monitor2.png', 'tvs com caixa de suporte'];
 
   s_contact_title = 'FALE CONOSCO';
   s_contact_whatsapp = ['../../../assets/img/whatsapp.png', 'icone do whatsapp', 'https://api.whatsapp.com/send?phone=55085985970703'];
