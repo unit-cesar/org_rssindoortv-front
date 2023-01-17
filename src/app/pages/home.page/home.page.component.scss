@@ -2,47 +2,101 @@
 
 @use "../../sass-global/global.scss" as *;
 
-.s-tmpl {
-  margin-top: 18rem;
-  margin-bottom: -10rem;
+.h-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 
+  .h-app-title {
+    background-color: $color-3;
+    white-space: nowrap;
+    border-radius: 3rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    color: $color-1;
+    box-shadow: 0 0.2rem 0.4rem 0 $color-4;
+    margin-bottom: 2rem;
+    position: relative;
+    top: -2rem;
+  }
+
+  .h-app-txts {
+    display: flex;
+    flex-direction: column;
+    color: $color-2;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center;
+
+    span {
+      text-shadow: -0.1rem 0.1rem 0 $color-4;
+    }
+  }
+  .h-app-playstore {
+    img {
+      zoom: 0.7;
+      margin-top: 1rem;
+    }
+  }
+}
+
+.s-tmpl {
   .s-tmpl-sub-title {
     text-align: center;
   }
 
   .s-tmpl-tmpls {
-    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    align-self: center;
 
-    ul {
-      list-style-type: none;
-      margin: 2rem 0;
-      padding: 0;
-      text-align: start;
-      font-weight: 200;
-    }
-  }
-  .s-tmpl-txt {
-    font-weight: 600;
-    margin-top: -1.5rem;
-  }
-  .s-tmpl-img1 {
-    position: relative;
-    top: -33.2rem;
-    align-self: flex-end;
+    .s-tmpl-tmpls-list {
+      margin-right: 3rem;
 
-    img {
-      width: 13rem;
+      ul {
+        list-style-type: none;
+        margin: 2rem 0;
+        padding: 0;
+        text-align: start;
+        font-weight: 200;
+      }
+
+      .s-tmpl-txt {
+        font-weight: 600;
+        margin: -1.5rem 0 0 0;
+        text-align: right;
+      }
     }
-  }
-  .s-tmpl-carousel {
-    position: relative;
-    top: -8.8rem;
+
+    .s-tmpl-img {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      zoom: 0.6;
+
+      .s-tmpl-img1 {
+        img {
+          zoom: 0.5;
+        }
+      }
+      .s-tmpl-carousel {
+        .c-app-carousel-tmpls {
+          // para o zoom funcionar no iOS as medidas de imagens devem ser em PX
+          width: 100px;
+          // width: 10rem;
+        }
+      }
+    }
   }
 }
 
 .s-hands {
   .s-hands-txt {
-    width: 25rem;
+    white-space: pre;
   }
   img {
     margin-top: 2rem;
@@ -52,33 +106,42 @@
 .s-ctrl {
   .s-ctrl-img1 {
     img {
-      width: 10rem;
-      margin: 0.8rem 0 -0.8rem 0;
+      display: none;
     }
   }
   .s-ctrl-txts {
-    width: 25rem;
+    font-weight: 200;
     div {
+      white-space: pre-line;
       margin: 1rem 0;
     }
   }
   .s-ctrl-caroucel {
     position: relative;
     top: 1.6rem;
+    display: flex;
+    justify-content: center;
+
+    .c-app-carousel-news {
+      // para o zoom funcionar no iOS as medidas de imagens devem ser em PX
+      width: 100px;
+      // width: 10rem;
+    }
   }
 }
 
 .s-invest {
   .s-invest-img1 {
     margin-top: 2rem;
+    margin-bottom: -2rem;
     img {
-      width: 10rem;
+      // width: 10rem;
+      zoom: 0.6;
     }
   }
 }
 
 .s-contact {
-  margin-top: -2rem;
   .s-contact-address {
     display: flex;
     flex-direction: column;
@@ -86,14 +149,14 @@
 
     .s-contact-address-whatsapp {
       img {
-        height: 3.6rem;
-        margin-top: 2rem;
+        zoom: 0.7;
+        margin-top: 1.5rem;
       }
     }
     .s-contact-address-telegram {
       img {
-        height: 3.6rem;
-        margin-top: 2rem;
+        zoom: 0.7;
+        margin-top: 1.5rem;
       }
     }
   }
@@ -106,9 +169,9 @@
   /* 280x653 */
 }
 
-// @media screen and (min-width: 360px) {
-//   /* mobile-first 360x[640, 740] - acessos: 16% */
-// }
+@media screen and (min-width: 360px) {
+  /* mobile-first 360x[640, 740] - acessos: 16% */
+}
 
 @media screen and (min-width: 412px) {
   /* 412x[732, 869, 824, 846, 847, 869] */
@@ -117,32 +180,26 @@
 @media screen and (min-width: 640px) {
   /* 640x360 - acessos: 16% */
 
-  .s-tmpl {
-    margin-top: 21rem;
-    margin-bottom: -22rem;
+  .h-app {
+    .h-app-txts {
+      font-size: 2.1rem;
+    }
 
-    .s-tmpl-carousel {
-      top: -24.5rem;
-      align-self: flex-end;
+    .h-app-playstore {
+      img {
+        // para o zoom funcionar no iOS as medidas de imagens devem ser em PX
+        width: 202px;
+        margin-top: 1rem;
+      }
     }
   }
 
-  .s-ctrl {
-    margin-bottom: -18rem;
-
-    .s-ctrl-img1 {
-      align-self: flex-end;
+  .s-tmpl > .s-tmpl-tmpls {
+    .s-tmpl-tmpls-list {
+      margin-right: 5rem;
     }
-    .s-ctrl-txts {
-      align-self: flex-start;
-      width: 28rem;
-      position: relative;
-      top: -7rem;
-      text-align: left;
-    }
-    .s-ctrl-caroucel {
-      align-self: flex-end;
-      top: -18.4rem;
+    .s-tmpl-img {
+      zoom: 1;
     }
   }
 
@@ -167,40 +224,65 @@
 }
 
 @media screen and (min-width: 1280px) {
-  /* 1080x[1024, 720, 900, 800, 850] */
+  /* 1280x[1024, 720, 900, 800, 850] */
 }
 
 @media screen and (min-width: 1366px) {
   /* desktop-first 1366x768 - acessos: 25% */
 
+  .h-app {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2rem;
+    align-items: center;
+
+    .h-app-title {
+      font-size: 1.5rem;
+      margin-bottom: 0;
+      position: unset;
+    }
+
+    .h-app-txts {
+      font-size: 2.1rem;
+      width: 47.6rem;
+    }
+
+    .h-app-playstore {
+      img {
+        zoom: 1;
+      }
+    }
+  }
+
   .s-tmpl {
     margin-top: 0;
-
-    margin-bottom: -22rem;
-
-    .s-tmpl-carousel {
-      top: -24.5rem;
-      align-self: flex-end;
-    }
   }
 
   .s-ctrl {
     margin-top: 0;
-    margin-bottom: -18rem;
 
-    .s-ctrl-img1 {
-      align-self: flex-end;
-    }
-    .s-ctrl-txts {
-      align-self: flex-start;
-      width: 28rem;
-      position: relative;
-      top: -7rem;
-      text-align: left;
-    }
-    .s-ctrl-caroucel {
-      align-self: flex-end;
-      top: -18.4rem;
+    .s-ctrl-list {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      align-self: center;
+
+      .s-ctrl-txts {
+        text-align: left;
+        margin-right: 5rem;
+      }
+      .s-ctrl-img {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        .s-ctrl-img1 {
+          zoom: 0.6;
+          img {
+            display: unset;
+          }
+        }
+      }
     }
   }
 
